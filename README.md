@@ -7,6 +7,7 @@ This project demonstrates how to integrate FastAPI with Ollama, a tool for runni
 
 ## Dependencies
 ### Required Software
+- **Python**: Ensure you have Python 3.7 or later installed on your system. You can download Python from the official [Python website](https://www.python.org/downloads/).
 - **FastAPI**: A modern, fast (high-performance) web framework for building APIs with Python.
 - **Requests**: A simple HTTP library for Python.
 - **Ollama**: A tool for running AI models locally.
@@ -29,6 +30,20 @@ This project demonstrates how to integrate FastAPI with Ollama, a tool for runni
 - **demo_script.py**: Demonstrates how to use the FastAPI endpoints to retrieve streaming, formatted, and complete JSON responses.
 
 ## Usage
+### Clone the Repository:
+```sh
+git clone https://github.com/your-username/fastapi-ollama-demo.git
+cd fastapi-ollama-demo
+```
+### Set Up a Virtual Environment:
+```sh
+python -m venv venv
+source venv/bin/activate
+```
+### Install Dependencies:
+```sh
+pip install -r requirements.txt
+```
 ### Running the FastAPI Server
 1. Start the FastAPI server:
     `uvicorn app:app --reload`
@@ -49,14 +64,50 @@ This project demonstrates how to integrate FastAPI with Ollama, a tool for runni
     Run `demo_script.py` to see the demo in action:
     `python demo_script.py`
     This script will show examples of streaming, formatted, and complete JSON responses.
+
+3. **Using cURL:**
+   - Get Raw Streaming Response Example:
+        ```sh
+        curl -X POST "http://localhost:8000/generate" -H "Content-Type: application/json" -d '{
+          "model": "llama3.1",
+          "prompt": "Write a haiku.",
+          "stream": true
+        }'
+        ```
+   - Get Formatted Response Example:
+        ```sh
+        curl -X POST "http://localhost:8000/generate_formatted" -H "Content-Type: application/json" -d '{
+          "model": "llama3.1",
+          "prompt": "Write a haiku.",
+          "stream": false
+        }'
+        ```
+   - Get Complete JSON Response Example:
+        ```sh
+        curl -X POST "http://localhost:8000/generate" -H "Content-Type: application/json" -d '{
+          "model": "llama3.1",
+          "prompt": "Write a haiku.",
+          "stream": false
+        }'
+        ```
+   
     
 ## Additional Notes
 
 - Ensure that Ollama is properly configured and running locally on `http://localhost:11434`. Update the URL in `app.py` if your Ollama instance is hosted elsewhere.
 - The FastAPI server and Ollama must be running simultaneously to process requests successfully.
 - For more details on FastAPI and Requests, refer to their respective documentation:
-    - FastAPI Documentation
-    - Requests Documentation
+    - [FastAPI Documentation](https://fastapi.tiangolo.com/)
+    - [Requests Documentation](https://requests.readthedocs.io/en/latest/)
+
+## System Specifications
+For reference, this project was developed and tested on the following hardware:
+- Processor: AMD Ryzen 5 5600X 6-Core
+- GPU: NVIDIA GeForce RTX 3060 Ti
+- RAM: 32 GB
+- Operating System: Ubuntu/WSL on Windows 11
+- Storage: 2 TB SSD
+- These specifications were sufficient for running the FastAPI server and Ollama integration demo. If you encounter any performance issues or have different specifications, you may need to adjust your setup accordingly.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
