@@ -110,4 +110,4 @@ For reference, this project was developed and tested on the following hardware:
 - These specifications were sufficient for running the FastAPI server and Ollama integration demo. If you encounter any performance issues or have different specifications, you may need to adjust your setup accordingly.
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
