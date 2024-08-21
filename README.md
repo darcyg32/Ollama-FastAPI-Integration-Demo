@@ -27,7 +27,7 @@ This project demonstrates how to integrate FastAPI with Ollama, a tool for runni
 ## Files
 - **app.py**: Defines a FastAPI application with endpoints for generating raw and formatted responses from the Ollama API.
 - **send_request.py**: A command-line script to send requests to the FastAPI server and print responses. It supports both raw and formatted responses.
-- **demo_script.py**: Demonstrates how to use the FastAPI endpoints to retrieve streaming, formatted, and complete JSON responses.
+- **demo_script.py**: Demonstrates how to use the the send_request function to retrieve streaming, formatted, and complete JSON responses.
 
 ## Usage
 ### Clone the Repository:
