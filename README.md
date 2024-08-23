@@ -32,7 +32,7 @@ This project demonstrates how to integrate FastAPI with Ollama, a tool for runni
 ## Usage
 ### Clone the Repository:
 ```sh
-git clone https://github.com/your-username/fastapi-ollama-demo.git
+git clone https://github.com/darcyg32/fastapi-ollama-demo.git
 cd fastapi-ollama-demo
 ```
 ### Set Up a Virtual Environment:
